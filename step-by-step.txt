@@ -1,0 +1,37 @@
+1. 配置数据库
+
+（1）安装mysql
+
+（2）登录mysql，建立weibo数据库，编码为utf8mb4
+
+CREATE DATABASE  `wordpress` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+2. 准备环境
+
+source env.sh
+
+3. 启动worker
+
+celery -A tasks.workers worker -l info -c 1
+
+4. login first
+
+python3 login_first.py
+
+
+
+5. mysql
+
+mysql -u root -p
+密码：sjjpvf
+
+6. redis
+
+redis-cli -a sjjpvf
+
+6.1选择库
+
+select 1
+keys *
+
+
